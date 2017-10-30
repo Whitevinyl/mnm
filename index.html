@@ -1,0 +1,199 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+
+    <title>Mnemoscene</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Meaningful immersive experiences." />
+    <meta name="robots" content="noodp,noydir" />
+    <meta name="keywords" content=""  />
+
+    <script type="text/javascript" src="js/lib/tween.min.js"></script>
+    <script type="text/javascript" src="js/lib/three.min.js"></script>
+    <script type="text/javascript" src="js/lib/tombola.js"></script>
+    <script type="text/javascript" src="js/lib/colorflex.js"></script>
+    <script type="text/javascript" src="js/lib/perlin-simplex.js"></script>
+    <script type="text/javascript" src="js/lib/canvas-noise.js"></script>
+    <script type="text/javascript" src="js/lib/slideshow.js"></script>
+
+    <script type="text/javascript" src="js/_UTILS.js"></script>
+    <script type="text/javascript" src="js/_MAIN.js"></script>
+    <script type="text/javascript" src="js/_METRICS.js"></script>
+    <script type="text/javascript" src="js/_3D.js"></script>
+    <script type="text/javascript" src="js/_GENERATE.js"></script>
+    <script type="text/javascript" src="js/_INTERACTION.js"></script>
+    <script type="text/javascript" src="js/_DRAW.js"></script>
+    <script type="text/javascript" src="js/_TWEENS.js"></script>
+
+    <link href="STYLE.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="image_src" type="image/png" href="thumb.jpg">
+
+</head>
+<body bgcolor="#000" onload="init()" onresize="metrics()">
+
+    <!-- index starts here -->
+
+    <div id='bar'>
+        <div id='icon'>
+            <SVG viewBox='0 0 100 100' preserveAspectRatio='none'>
+                <path d='M50 80 L77.6 59.6 L68 26 L32 26 L21.2 59.6' vector-effect='non-scaling-stroke' fill='none' stroke='currentColor' stroke-width='3'  stroke-miterlimit='10'/>
+                <path d='M60 60 L60 40 L50 58 M40 40 L40 60 z' vector-effect='non-scaling-stroke' fill='none' stroke='currentColor' stroke-width='3'  stroke-miterlimit='10'/>
+            </SVG>
+        </div>
+    </div>
+    <div id='strip'></div>
+
+    <div id='app'>
+		<canvas id='main' class='unselectable'></canvas>
+        <div id='noiseLayer'></div>
+	</div>
+
+
+	<div id='wrapper'>
+
+		<div id='intro'>
+
+			<div id='ttWrap' class='hide'>
+				<div id='tt'>
+
+                    <h1 id='ttTxt'></h1>
+
+					<div class='spaceRow'>
+						<div class='spaceBlock'></div>
+					</div>
+				</div>
+			</div>
+
+			<div class='hide'>
+                <p><span>Create meaningful immersive experiences.</span></p>
+			</div>
+
+		</div>
+
+		<div id='introArrowWrap'class='hide'>
+			<div id='introArrow'>
+				<SVG width="50" height ="35">
+					<path d="M0 10 L25 35 L50 10 L45 10 L25 30 L5 10  z" fill="currentColor"></path>
+				</SVG>
+			</div>
+		</div>
+
+	</div>
+
+    <div class='content pink'>
+        <div class='sectionName'>
+            <div class='nameTT'>aim</div>
+            <div class='nameLine'></div>
+        </div>
+
+        <div class='sectionWrap group'>
+            <h4>Mnemoscene</h4>
+            <p>Mnemoscene are <a href=''>@edsilv</a> and <a href=''>@sophiedixon1</a>.
+Newly established, our goal is to combine our artistic, technical, and educational expertise to increase engagement with cultural heritage through meaningful immersive experiences.
+            </p>
+        </div>
+
+    </div>
+    <div class='content top'>
+
+        <div class='sectionName'>
+            <div class='nameTT'>work</div>
+            <div class='nameLine'></div>
+        </div>
+
+        <div class='sectionWrap group'>
+
+            <div id='slideshow'>
+
+                <div><img src="img/02.jpg"  /></div>
+
+                <div><img src="img/01.jpg"  /></div>
+
+                <div><img src="img/03.jpg"  /></div>
+
+            </div>
+        </div>
+
+        <div class='sectionWrap group'>
+            <div class='title block'>
+                <h2>Project</h2>
+                <div class='spaceBlock2'></div>
+
+            </div>
+			<div class='copy block'>
+				<p>
+					This demonstration shows a holographic exhibition being created using International Image Interoperability Framework (IIIF) content. Combined with a mobile companion app built with <a href='http://universalviewer.io'>universalviewer.io</a>, the user can add artefacts to their personal collection, which can be accessed via the web.
+				</p>
+            </div>
+
+		</div>
+
+    </div>
+
+    <!-- footer starts here -->
+
+
+    <div id='footer'>
+
+        <div class='sectionName'>
+            <div class='nameTT'>info</div>
+            <div class='nameLine'></div>
+        </div>
+
+        <div class='sectionWrap group'>
+
+            <div id='footLinks'>
+                <h3>Contact</h3>
+                <div>
+                    <a class='footLink' href='mailto:info@mnemoscene.io' >info@mnemoscene.io</a>
+                </div>
+
+                <div>
+                    <a class='footLink' href='https://twitter.com/mnemoscene' target='_blank' >twitter</a>
+                </div>
+
+                <div>
+                    <a class='footLink' href='' target='_blank' >instagram</a>
+                </div>
+
+                <div>
+                    <a class='footLink' href='' target='_blank' >facebook</a>
+                </div>
+
+            </div>
+
+
+
+            <div id='signUpBox'>
+                <h3>Mailing</h3>
+                <!--<div class='spaceBlock3'></div>-->
+                <p>Enter your email address for occasional updates.</p>
+
+
+                <form id='submitForm' action="https://tinyletter.com/holoscene" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/holoscene', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+                    <!--<p><label for="tlemail">Enter your email address for occasional updates.</label></p>-->
+                    <input type="text" name="email" placeholder="email address" id="tlemail" /><input type="hidden" value="1" name="embed"/><div class='tlhover'><input type="submit" value="subscribe &rarr;" id="tlsubmit" /></div>
+
+                </form>
+            </div>
+
+
+        </div>
+
+        <a id='wvnl' href='http://whitevinyldesign.com' target='_blank'>Site by Wvnl</a>
+    </div>
+
+
+
+
+
+</body>
+</html>

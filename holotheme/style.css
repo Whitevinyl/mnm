@@ -1,0 +1,668 @@
+/*
+	Theme Name: HTML5 Blank
+	Theme URI: http://html5blank.com
+	Description: HTML5 Blank WordPress Theme
+	Version: 1.4.3
+	Author: Todd Motto (@toddmotto)
+	Author URI: http://toddmotto.com
+	Tags: Blank, HTML5, CSS3
+
+	License: MIT
+	License URI: http://opensource.org/licenses/mit-license.php
+*/
+
+/*------------------------------------*\
+    MAIN
+\*------------------------------------*/
+
+/* global box-sizing */
+*,
+*:after,
+*:before {
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	-webkit-font-smoothing:antialiased;
+	font-smoothing:antialiased;
+	text-rendering:optimizeLegibility;
+}
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #000;
+    color: #fff;
+	width: 100%;
+    height: 100%;
+
+	-webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+}
+
+/* clear */
+.clear:before,
+.clear:after {
+    content:' ';
+    display:table;
+}
+
+.clear:after {
+    clear:both;
+}
+.clear {
+    *zoom:1;
+}
+img {
+	max-width:100%;
+	vertical-align:bottom;
+}
+a {
+	text-decoration:none;
+}
+a:hover {
+}
+a:focus {
+	outline:0;
+}
+a:hover,
+a:active {
+	outline:0;
+}
+input:focus {
+	outline:0;
+	border:1px solid #04A4CC;
+}
+
+*.unselectable {
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+}
+
+/*------------------------------------*\
+    STRUCTURE
+\*------------------------------------*/
+
+html,body {
+    height: 100%;
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+
+canvas {
+    height: 100%;
+    width: 100%;
+    display: block;
+    overflow: auto;
+}
+
+#main {
+    position: absolute;
+}
+
+#page {
+    width: 100%;
+    height: auto;
+    position: absolute;
+}
+
+#wrapper {
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-align: center;
+}
+
+#intro {
+    width: 100%;
+    min-width: 300px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#intro p {
+    max-width: 450px;
+    margin: 25px auto;
+}
+
+#introArrowWrap {
+    width: 100%;
+    position: absolute;
+    bottom: 40px;
+    text-align: center;
+}
+
+#introArrow {
+    margin: 0 auto;
+    width: 50px;
+    height: 40px;
+}
+
+
+#tt {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+#ttWrap {
+    position: relative;
+    height: 60%;
+    width: 100%;
+}
+
+#ttWrap {
+    height: 61%;
+}
+
+#content {
+    width: 100%;
+    text-align: center;
+    padding: 150px 0 60px 0;
+}
+
+#videoWrap {
+    margin: 0 auto 180px auto;
+    display: block;
+    width: 80%;
+    text-align: left;
+}
+
+.single {
+    width: 30%;
+    margin-right: 5%;
+}
+
+.double {
+    width: 65%;
+}
+
+.block {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#video {
+	position:relative;
+    display: block;
+    width: 100%;
+    padding-bottom: 56.25%;
+    background-color: #181819;
+	overflow: hidden;
+
+	/*padding-top:30px;
+	height:0;*/
+}
+
+#video iframe, #video object, #video embed {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+
+
+#signUpWrap {
+    width: 38%;
+    margin: 0 auto 0 auto;
+}
+
+#signUp {
+    width: 100%;
+}
+
+#submitForm {
+    overflow: hidden;
+    text-align: center;
+}
+
+.clear {
+    clear: both;
+}
+
+#tlemail {
+    width: 65%;
+    float: left;
+}
+
+#tlsubmit {
+    width: 32%;
+    float: right;
+}
+
+#tlemail, #tlsubmit {
+    display: inline-block;
+    border: 0;
+    padding: 0;
+    margin: 0 0 30px 0;
+    outline: 0;
+    box-shadow: 0;
+    height: 50px;
+    line-height: 50px;
+}
+
+#footLinks {
+    margin: 150px auto 0 auto;
+	overflow: hidden;
+}
+
+#footEmail {
+    width: 50%;
+	display: inline-block;
+	float: left;
+	padding-left: 5%;
+	box-sizing: border-box;
+}
+
+#footSocial {
+	width: 50%;
+	display: inline-block;
+	float: left;
+	padding-right: 5%;
+	box-sizing: border-box;
+}
+
+.footLink {
+    display: inline-block;
+    margin: 0 20px 0 20px;
+    text-align: center;
+}
+
+.linkLine {
+    lineHeight: 30px;
+}
+
+/*------------------------------------*\
+    STYLE
+\*------------------------------------*/
+
+body {
+  font-family: 'Source Sans Pro', helvetica, sans-serif;
+  font-size: 19px;
+  line-height: 24px;
+}
+
+
+h1 {
+    font-family: 'Montserrat', helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 72px;
+    letter-spacing: 7px;
+    letter-spacing: 0.095em;
+    line-height: 34px;
+    text-transform: uppercase;
+}
+
+
+/*.hide {
+    display: none;
+}*/
+
+.reveal {
+    display: none !important;
+}
+
+.spaceBlock, .spaceBlock2 {
+  width: 50px;
+  height: 9px;
+  background-color: #ffffff;
+}
+
+.spaceBlock {
+	margin: 0 auto;
+}
+
+.spaceBlock2 {
+  margin: 50px 0 0 0;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+.italic {
+  font-style: italic;
+}
+
+
+.spaceRow {
+  text-align: center;
+}
+
+#wrapper {
+    background-color: rgba(5,5,5,0.1);
+
+	-webkit-transition: opacity 2s, -webkit-transform 2s;
+    transition: opacity 2s, transform 2s;
+	opacity: 0;
+}
+
+#content {
+    background-color: rgba(5,5,5,0.85);
+}
+
+#signUp {
+    border-bottom: 2px dashed #ffffff;
+    font-size: 26px;
+    letter-spacing: 1px;
+    line-height: 64px;
+    margin-bottom: 20px;
+}
+
+#tlemail {
+    background-color: transparent;
+    border-bottom: 2px dashed #ffffff;
+    font-size: 26px;
+    font-family: 'Source Sans Pro', helvetica, sans-serif;
+    letter-spacing: 1px;
+    color: inherit;
+    text-align: center;
+}
+
+#tlsubmit {
+    color: inherit;
+    font-size: 13px;
+    line-height: 26px;
+    text-transform: uppercase;
+    letter-spacing: 0.26em;
+    font-family: 'Source Sans Pro', helvetica, sans-serif;
+    background-color: transparent;
+    border: 3px solid #ffffff;
+
+    -webkit-transition: color 0.4s, background-color 0.4s, -webkit-transform 0.4s;
+    transition: color 0.4s, background-color 0.4s, transform 0.4s;
+}
+
+#tlsubmit:hover {
+    color: #000000;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #ffffff;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #ffffff;
+  opacity: 1;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #ffffff;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #ffffff;
+}
+
+input:focus::placeholder {
+    opacity: 0.2;
+}
+
+#footEmail {
+	text-align: left;
+}
+
+#footSocial {
+	text-align: right;
+}
+
+.footLinkA {
+    display: block;
+    height: 42px;
+}
+
+.linkLine {
+    border-bottom: 3px solid #ffffff;
+    margin: 0 auto;
+    width: 0;
+    -webkit-transition: width 0.4s, -webkit-transform 0.4s;
+    transition: width 0.4s, transform 0.4s;
+}
+
+.footLink:hover .linkLine  {
+    width: 100%;
+}
+
+/*------------------------------------*\
+	TYPOGRAPHY
+\*------------------------------------*/
+
+@font-face {
+	font-family:'Font-Name';
+	src:url('fonts/font-name.eot');
+	src:url('fonts/font-name.eot?#iefix') format('embedded-opentype'),
+		url('fonts/font-name.woff') format('woff'),
+		url('fonts/font-name.ttf') format('truetype'),
+		url('fonts/font-name.svg#font-name') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+
+/*------------------------------------*\
+    MISC
+\*------------------------------------*/
+
+::selection {
+	background:#04A4CC;
+	color:#FFF;
+	text-shadow:none;
+}
+::-webkit-selection {
+	background:#04A4CC;
+	color:#FFF;
+	text-shadow:none;
+}
+::-moz-selection {
+	background:#04A4CC;
+	color:#FFF;
+	text-shadow:none;
+}
+
+/*------------------------------------*\
+    WORDPRESS CORE
+\*------------------------------------*/
+
+.alignnone {
+	margin:5px 20px 20px 0;
+}
+.aligncenter,
+div.aligncenter {
+	display:block;
+	margin:5px auto 5px auto;
+}
+.alignright {
+	float:right;
+	margin:5px 0 20px 20px;
+}
+.alignleft {
+	float:left;
+	margin:5px 20px 20px 0;
+}
+a img.alignright {
+	float:right;
+	margin:5px 0 20px 20px;
+}
+a img.alignnone {
+	margin:5px 20px 20px 0;
+}
+a img.alignleft {
+	float:left;
+	margin:5px 20px 20px 0;
+}
+a img.aligncenter {
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+}
+.wp-caption {
+	background:#FFF;
+	border:1px solid #F0F0F0;
+	max-width:96%;
+	padding:5px 3px 10px;
+	text-align:center;
+}
+.wp-caption.alignnone {
+	margin:5px 20px 20px 0;
+}
+.wp-caption.alignleft {
+	margin:5px 20px 20px 0;
+}
+.wp-caption.alignright {
+	margin:5px 0 20px 20px;
+}
+.wp-caption img {
+	border:0 none;
+	height:auto;
+	margin:0;
+	max-width:98.5%;
+	padding:0;
+	width:auto;
+}
+.wp-caption .wp-caption-text,
+.gallery-caption {
+	font-size:11px;
+	line-height:17px;
+	margin:0;
+	padding:0 4px 5px;
+}
+.sticky {
+
+}
+.bypostauthor {
+
+}
+
+/*------------------------------------*\
+    PRINT
+\*------------------------------------*/
+
+@media print {
+	* {
+		background:transparent !important;
+		color:#000 !important;
+		box-shadow:none !important;
+		text-shadow:none !important;
+	}
+	a,
+	a:visited {
+		text-decoration:underline;
+	}
+	a[href]:after {
+		content:" (" attr(href) ")";
+	}
+	abbr[title]:after {
+		content:" (" attr(title) ")";
+	}
+	.ir a:after,
+	a[href^="javascript:"]:after,
+	a[href^="#"]:after {
+		content:"";
+	}
+	pre,blockquote {
+		border:1px solid #999;
+		page-break-inside:avoid;
+	}
+	thead {
+		display:table-header-group;
+	}
+	tr,img {
+		page-break-inside:avoid;
+	}
+	img {
+		max-width:100% !important;
+	}
+	@page {
+		margin:0.5cm;
+	}
+	p,
+	h2,
+	h3 {
+		orphans:3;
+		widows:3;
+	}
+	h2,
+	h3 {
+		page-break-after:avoid;
+	}
+}
+
+/*------------------------------------*\
+    RESPONSIVE
+\*------------------------------------*/
+
+@media (max-width:1000px){
+    .single {
+        width: 100%;
+        margin: 0 0 60px 0;
+    }
+    .double {
+        width: 100%;
+    }
+    #signUpWrap {
+        width: 55%;
+    }
+}
+
+@media (max-width:700px){
+    h1 {
+        font-size: 48px;
+    }
+    .spaceBlock, .spaceBlock2 {
+      width: 30px;
+      height: 6px;
+    }
+    #intro {
+        width: 90%;
+    }
+    #signUpWrap {
+        width: 90%;
+    }
+}
+
+@media (max-width:500px){
+    h1 {
+        font-size: 41px;
+    }
+	#videoWrap {
+		width: 90%;
+	}
+	#tlemail {
+	    font-size: 22px;
+	}
+	#tlsubmit {
+	    font-size: 13px;
+	    letter-spacing: 0.1em;
+	}
+	#footEmail, #footSocial {
+	    width: 90%;
+		float: none;
+		text-align: center;
+		padding: 0;
+	}
+	#footEmail {
+		margin-bottom: 14px;
+		border-bottom: 1px solid #ffffff;
+	}
+}
